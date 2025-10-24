@@ -1,0 +1,6 @@
+@FLDTOOL.Api.FullantiOaSync_HostAddress = http://localhost:5223
+
+GET {{FLDTOOL.Api.FullantiOaSync_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

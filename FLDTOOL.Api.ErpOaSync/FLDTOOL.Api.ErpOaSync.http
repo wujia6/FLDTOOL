@@ -1,0 +1,6 @@
+@FLDTOOL.Api.ErpOaSync_HostAddress = http://localhost:5090
+
+GET {{FLDTOOL.Api.ErpOaSync_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
