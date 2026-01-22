@@ -49,7 +49,7 @@ namespace FLDTOOL.Model.ErpOaSync.Dtos
     {
         [Required]
         [Description("摘要")]
-        public string Remark { get; set; }
+        public string? Remark { get; set; }
 
         [Description("项目类别")]
         public string? ProjectType { get; set; }

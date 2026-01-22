@@ -70,7 +70,7 @@ namespace FLDTOOL.Utils.ErpOaSync
             }
             try
             {
-                //var client = httpClientFactory.CreateClient("LoggedClient");
+                //var client = httpClientFactory.CreateClient("LoggedClient");    //使用带日志记录的HttpClient
                 var client = httpClientFactory.CreateClient();
                 client.DefaultRequestHeaders.Clear();
                 using var message = new HttpRequestMessage(method, url);

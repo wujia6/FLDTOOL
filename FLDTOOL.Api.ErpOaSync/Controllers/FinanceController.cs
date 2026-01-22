@@ -29,8 +29,8 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
             if (oaUser.bindingUser == null)
                 return ApiResponse<string>.Fail("OA账号无效");
 
-            //string formMain = "formmain_0330", formSon = "formson_0331", template = "QKD";
-            string formMain = "formmain_0130", formSon = "formson_0131", template = "QKD";
+            string formMain = "formmain_0330", formSon = "formson_0331", template = "QKD";
+            //string formMain = "formmain_0130", formSon = "formson_0131", template = "QKD";
             //构建请求数据
             var payMain = new Dictionary<string, object>
             {
@@ -48,7 +48,7 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
             {
                 payDetails.Add(new Dictionary<string, object>
                 {
-                    { "摘要", det.Remark },
+                    { "摘要", det.Remark ?? string.Empty },
                     { "项目类别", det.ProjectType ?? string.Empty },
                     { "收款单位名称", det.ReceiveUnitName },
                     { "收款账号", det.PayeeAccount ?? string.Empty },
@@ -70,7 +70,7 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
                         { "templateCode", template },
                         { "draft", "0" },
                         { "data", new Dictionary<string, object> { { formMain, payMain }, { formSon, payDetails } } },
-                        { "subject", "请购单" }
+                        { "subject", "请款单" }
                     }
                 }
             };

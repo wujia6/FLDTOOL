@@ -19,8 +19,8 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
         [EndpointDescription("采购单")]
         public async Task<dynamic> OrderAsync([Description("OA账号")] string loginName, [FromBody] PurchaseOrderDto dto)
         {
-            //string formMain = "formmain_0078", formSon = "formson_0079", template = "CGD";
-            string formMain = "formmain_0124", formSon = "formson_0125", template = "CGD1";
+            string formMain = "formmain_0078", formSon = "formson_0079", template = "CGD";
+            //string formMain = "formmain_0124", formSon = "formson_0125", template = "CGD1";
             dynamic oaUser = await GetOaUserAsync(loginName);
 
             if (oaUser.bindingUser == null)
@@ -35,7 +35,7 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
                 { "申请人", oaUser.bindingUser.id.ToString() },
                 { "申请部门", oaUser.bindingUser.departmentId.ToString() },
                 { "申请时间", DateTime.Now },
-                { "厂商", dto.Manufacturer },
+                { "客户", dto.Manufacturer },
                 { "采购类型", "name|" + dto.Type ?? string.Empty },
                 { "大类", dto.Category ?? string.Empty },
                 { "数量合计", dto.DetailDtos.Sum(src => src.Quantity) },
@@ -95,8 +95,8 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
                 return ApiResponse<string>.Fail("OA账号无效");
 
             //构建请求数据
-            //string formMain = "formmain_0334", formSon = "formson_0336", template = "CGBG";
-            string formMain = "formmain_0128", formSon = "formson_0129", template = "CGBGD";
+            string formMain = "formmain_0334", formSon = "formson_0336", template = "CGBG";
+            //string formMain = "formmain_0128", formSon = "formson_0129", template = "CGBGD";
             var changeMain = new Dictionary<string, object>
             {
                 { "主体公司", $"name|{dto.Company}" },
@@ -106,8 +106,6 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
                 { "申请时间", DateTime.Now },
                 { "采购类型", $"name|{dto.Type ?? string.Empty}" },
                 { "变更原因", dto.Explan ?? string.Empty },
-                //{ "变更前合计数量", dto.DetailDtos.Where(det => det.ChangeFrom.Equals("变更前")).Sum(det => det.Quantity) },
-                //{ "变更前合计金额", dto.DetailDtos.Where(det => det.ChangeFrom.Equals("变更前")).Sum(det => det.Total) },
                 { "变更后合计数量", dto.DetailDtos.Sum(det => det.Quantity) ?? 0 },
                 { "变更后合计金额", dto.DetailDtos.Sum(det => det.Total) ?? 0 }
             };
@@ -118,19 +116,15 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
                 {
                     changeDetails.Add(new Dictionary<string, object>
                     {
-                        //{ "变更", det.ChangeFrom },
                         { "商品编码", det.ProductNo ?? string.Empty },
                         { "商品名称", det.ProductName ?? string.Empty },
                         { "规格型号", det.Specification ?? string.Empty },
-                        //{ "厂商名称", det.Manufacturer ?? string.Empty },
                         { "客户品名", det.CustomerProductName ?? string.Empty },
                         { "单位", det.Unit ?? string.Empty },
-                        //{ "材质", det.Material ?? string.Empty },
                         { "数量", det.Quantity ?? 0 },
                         { "单价", det.Price ?? 0 },
                         { "税率", det.TaxRate ?? 0 },
                         { "总价", det.Total ?? 0 },
-                        //{ "用途", det.Effect ?? string.Empty },
                         { "备注", det.Remark ?? string.Empty }
                     });
                 });
@@ -161,8 +155,8 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
         [EndpointDescription("申购单")]
         public async Task<dynamic> OrderApplyAsync([Description("OA账号")] string loginName, [FromBody] PurchaseRequestOrderDto dto)
         {
-            //string formMain = "formmain_0328", formSon = "fromson_0329", template = "SGD";
-            string formMain = "formmain_0122", formSon = "formson_0123", template = "SGD1";
+            string formMain = "formmain_0328", formSon = "formson_0329", template = "SGD";
+            //string formMain = "formmain_0122", formSon = "formson_0123", template = "SGD1";
             dynamic oaUser = await GetOaUserAsync(loginName);
 
             if (oaUser.bindingUser == null)

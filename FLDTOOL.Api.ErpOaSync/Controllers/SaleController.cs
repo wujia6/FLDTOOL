@@ -28,8 +28,8 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
             if (oaUser.bindingUser == null)
                 return ApiResponse<string>.Fail("OA账号无效");
 
-            //string formMain = "formmain_0121", formSon = "formson_0122", template = "XSDD";
-            string formMain = "formmain_0132", formSon = "formson_0133", template = "XSDD";
+            string formMain = "formmain_0121", formSon = "formson_0122", template = "XSDD";
+            //string formMain = "formmain_0132", formSon = "formson_0133", template = "XSDD";
             //构建请求数据
             var saleMain = new Dictionary<string, object>
             {
@@ -103,8 +103,8 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
             if (oaUser.bindingUser == null)
                 return ApiResponse<string>.Fail("OA账号无效");
 
-            //string formMain = "formmain_0345", formSon = "formmain_0346", template = "XSBG";
-            string formMain = "formmain_0140", formSon = "formson_0141", template = "XSBG1";
+            string formMain = "formmain_0345", formSon = "formmain_0346", template = "XSBG";
+            //string formMain = "formmain_0140", formSon = "formson_0141", template = "XSBG1";
             //构建请求数据
             var changeMain = new Dictionary<string, object>
             {
@@ -178,8 +178,8 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
             if (oaUser.bindingUser == null)
                 return ApiResponse<string>.Fail("OA账号无效");
 
-            //string formMain = "formmain_0343", formSon = "formmain_0344", template = "XSTH";
-            string formMain = "formmain_0136", formSon = "formson_0137", template = "XSTH";
+            string formMain = "formmain_0343", formSon = "formson_0344", template = "XSTH";
+            //string formMain = "formmain_0136", formSon = "formson_0137", template = "XSTH";
             //构建请求数据
             var perdictMain = new Dictionary<string, object>
             {
@@ -245,8 +245,8 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
             if (oaUser.bindingUser == null)
                 return ApiResponse<string>.Fail("OA账号无效");
 
-            //string formMain = "formmain_0339", formSon = "formson_0340", template = "YCDD";
-            string formMain = "formmain_0134", formSon = "formson_0135", template = "YCDD";
+            string formMain = "formmain_0339", formSon = "formson_0340", template = "YCDD";
+            //string formMain = "formmain_0134", formSon = "formson_0135", template = "YCDD";
             //构建请求数据
             var perdictMain = new Dictionary<string, object>
             {

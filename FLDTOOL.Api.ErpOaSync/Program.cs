@@ -31,14 +31,14 @@ builder.Services.AddOpenApi(options =>
         //设置对外展示的 server 地址（替换服务器地址或域名，本机调试时注释document.Servers代码块）
         document.Servers =
         [
-            //new Microsoft.OpenApi.Models.OpenApiServer
-            //{
-            //    Url = "http://10.39.0.170:8377",
-            //    Description = "内网地址"
-            //},
             new Microsoft.OpenApi.Models.OpenApiServer
             {
-                Url = "http://110.52.91.35:8733",   //实际部署的服务器外网地址
+                Url = "http://10.39.8.202:8899",
+                Description = "内网地址"
+            },
+            new Microsoft.OpenApi.Models.OpenApiServer
+            {
+                Url = "http://119.39.186.199:8899",   //实际部署的服务器外网地址
                 Description = "外网地址"
             }
         ];

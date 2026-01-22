@@ -19,8 +19,8 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
         [EndpointDescription("杂发领料审批单")]
         public async Task<dynamic> MiscellaneousReceiveAsync([Description("OA账号")] string loginName, [FromBody] MiscellaneousReceiveOrderDto dto)
         {
-            //string formMain = "formmain_0359", formSon = "formson_0360", template = "ZFD";
-            string formMain = "formmain_0126", formSon = "formson_0127", template = "ZFD";
+            string formMain = "formmain_0359", formSon = "formson_0360", template = "ZFD";
+            //string formMain = "formmain_0126", formSon = "formson_0127", template = "ZFD";
             dynamic oaUser = await GetOaUserAsync(loginName);
 
             if (oaUser.bindingUser == null)
