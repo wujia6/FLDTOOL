@@ -50,7 +50,8 @@ namespace FLDTOOL.Api.ErpOaSync.Controllers
                     { "数量", detail.Quantity },
                     { "单价", detail.Price },
                     { "总价", detail.Amount ?? 0 },
-                    { "用途", detail.ApplyTo ?? string.Empty }
+                    { "用途", detail.ApplyTo ?? string.Empty },
+                    { "受益部门", detail.Department ?? string.Empty }
                 });
             }
 

@@ -57,5 +57,8 @@ namespace FLDTOOL.Model.ErpOaSync.Dtos
 
         [Description("用途")]
         public string? ApplyTo { get; set; }
+
+        [Description("受益部门")]
+        public string? Department { get; set; }
     }
 }
